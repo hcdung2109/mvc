@@ -11,23 +11,24 @@
 <body>
 
 <div class="container">
-    <h2>Danh Sách Banner</h2>
-    <table class="table">
+    <h2>Danh Sách Người Dùng</h2>
+    <a href="/?method=them&controller=user" class="btn btn-primary">Thêm</a>
+    <table class="table table-bordered">
         <thead>
         <tr>
-            <th style="font-weight: bold">ID</th>
-            <th>TITLE</th>
-            <th>SLUG</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
         </tr>
         </thead>
         <tbody>
-            <?php foreach ($data as $item){ ?>
-                <tr>
-                    <td><?= $item['id'] ?></td>
-                    <td><?= $item['title'] ?></td>
-                    <td><?php echo $item['slug'] ?></td>
-                </tr>
-            <?php } ?>
+        <?php foreach ($data as $item) { ?>
+            <tr>
+                <td><?php echo $item['id'] ?></td>
+                <td><?php echo $item['name'] ?></td>
+                <td><?php echo $item['email'] ?></td>
+            </tr>
+        <?php } ?>
         </tbody>
     </table>
 </div>
