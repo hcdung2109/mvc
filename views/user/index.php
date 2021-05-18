@@ -30,12 +30,37 @@
                 <td><?php echo $item['email'] ?></td>
                 <td>
                     <a href="/?method=sua&controller=user&id=<?php echo $item['id'] ?>" class="btn btn-info">Sửa</a>
+                    <a href="/?method=xoa&controller=user&id=<?php echo $item['id'] ?>" class="btn btn-danger">Xóa</a>
+                    <button onclick="eventDelete(<?php echo $item['id'] ?>)" class="btn btn-warning">Xóa (ajax)</button>
                 </td>
             </tr>
         <?php } ?>
         </tbody>
     </table>
 </div>
+
+<script type="text/javascript">
+    // hàm xóa
+    function eventDelete(id) {
+        // tạo ra request chạy ngầm sử dụng ajax
+        $.ajax({
+            method: "GET",
+            url: "/?method=xoa&controller=user&id="+id,
+            data: {
+
+            },
+            success: function(response) {
+                alert("xóa thành công");
+                // tải lại trang
+                location.reload();
+            }
+        });
+
+    }
+
+</script>
+
+
 
 </body>
 </html>

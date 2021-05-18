@@ -68,4 +68,16 @@ class UserController
         include_once 'views/user/edit.php';
 
     }
+
+    // xóa
+    public function delete()
+    {
+        $id = $_GET['id'];
+
+        $m_user = new User();
+        $m_user->remove($id); // gọi hàm xóa từ model
+
+        header('Location: http://mvc.local:8888/?method=danhsach&controller=user');
+        exit;
+    }
 }

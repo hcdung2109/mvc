@@ -18,6 +18,10 @@ if (isset($_GET['controller'])) { // user
 
         } elseif ($method == 'sua') {
             $c_user->edit();
+        } elseif ($method == 'xoa') {
+            $c_user->delete();
+        } else {
+            echo 'method không tồn tại';
         }
 
     } elseif ($controller == 'vendor') {

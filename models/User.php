@@ -56,4 +56,13 @@ class User extends Connection
 
         $this->con->query($sql);
     }
+
+    // xóa
+    public function remove($id)
+    {
+        $sql = "DELETE FROM users
+                WHERE id = $id";
+
+        $this->con->query($sql);
+    }
 }
