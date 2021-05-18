@@ -2,7 +2,7 @@
 //echo 'mo hình mvc';
 include_once 'controllers/UserController.php';
 
-if (isset($_GET['controller'])) {
+if (isset($_GET['controller'])) { // user
     $controller = $_GET['controller'];
 
     if ($controller == 'user') {
@@ -15,6 +15,9 @@ if (isset($_GET['controller'])) {
 
         } elseif ($method == 'danhsach') {
             $c_user->index(); // dach sách
+
+        } elseif ($method == 'sua') {
+            $c_user->edit();
         }
 
     } elseif ($controller == 'vendor') {

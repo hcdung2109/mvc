@@ -19,6 +19,7 @@
             <th>ID</th>
             <th>Name</th>
             <th>Email</th>
+            <th>Hành động</th>
         </tr>
         </thead>
         <tbody>
@@ -27,6 +28,9 @@
                 <td><?php echo $item['id'] ?></td>
                 <td><?php echo $item['name'] ?></td>
                 <td><?php echo $item['email'] ?></td>
+                <td>
+                    <a href="/?method=sua&controller=user&id=<?php echo $item['id'] ?>" class="btn btn-info">Sửa</a>
+                </td>
             </tr>
         <?php } ?>
         </tbody>

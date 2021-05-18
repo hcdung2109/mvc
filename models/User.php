@@ -30,4 +30,30 @@ class User extends Connection
 
         $this->con->query($sql);
     }
+
+    // lấy chi tiết
+    public function detail($id)
+    {
+        $sql = "SELECT * FROM `users` WHERE id = $id";
+
+        $result = $this->con->query($sql);
+
+        // Sử dụng vòng lặp while để duyệt qua từng kết quả trả về
+        while ($row = $result->fetch_assoc()) {
+            $nguoidung = $row;
+        }
+
+        return $nguoidung;
+
+    }
+
+    // hàm cập nhật dự liệu
+    public function update($id, $name, $email, $pwd, $remember_token)
+    {
+        $sql = "UPDATE users
+                SET name='$name', email='$email', password='$pwd',remember_token='$remember_token'
+                WHERE id = $id";
+
+        $this->con->query($sql);
+    }
 }
