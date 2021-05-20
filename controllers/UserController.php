@@ -11,18 +11,25 @@ class UserController
     // danh sach
     public function index()
     {
+        $controller  = 'user';
+        $view = 'index';
+
         // goi Model User
         $m_user = new User();
         // Lấy dữ liệu hiển thị sang View
         $data = $m_user->danh_sach();
 
         // gọi View User
-        include_once 'views/user/index.php';
+        //include_once 'views/user/index.php';
+        include_once 'views/layouts/main.php';
     }
 
     // thêm
     public function add()
     {
+        $controller  = 'user';
+        $view = 'add';
+
         if (isset($_POST['name'])) {
             $name = $_POST['name'];
             $email = $_POST['email'];
@@ -36,7 +43,8 @@ class UserController
             exit;
         }
 
-        include_once 'views/user/add.php';
+        //include_once 'views/user/add.php';
+        include_once 'views/layouts/main.php';
     }
 
     // sưa
@@ -65,7 +73,12 @@ class UserController
             exit;
         }
 
-        include_once 'views/user/edit.php';
+        // include_once 'views/user/edit.php';
+
+        $controller  = 'user';
+        $view = 'edit';
+
+        include_once 'views/layouts/main.php';
 
     }
 
